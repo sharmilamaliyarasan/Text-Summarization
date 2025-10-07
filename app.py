@@ -16,7 +16,7 @@ def load_model():
         tokenizer = T5Tokenizer.from_pretrained(model_path)
         model = T5ForConditionalGeneration.from_pretrained(model_path)
     except:
-        st.warning("⚠️ Fine-tuned model not found. Loading default pretrained model.")
+        st.info("Using pretrained T5-small model for summarization.")
         tokenizer = T5Tokenizer.from_pretrained("t5-small")
         model = T5ForConditionalGeneration.from_pretrained("t5-small")
     
@@ -62,3 +62,4 @@ if st.button("✨ Generate Summary"):
 
 st.markdown("---")
 st.caption("Developed by Sharmi 🌸 | Model: T5-small | Runs on CPU")
+
